@@ -8,9 +8,9 @@ def main():
     while True:
 
         print("=====EXPENSES TRACKER======\n")
-        print("1. add expenses\n2. View expenses\n3. delete expenses\n4. Check Total Expenses\n5. View By Category\n")
+        print("1. add expenses\n2. View expenses\n3. delete expenses\n4. Check Total Expenses\n5. View By Category\n6. Exit\n")
 
-        user_input = validate_user_input("Choose a number from the listed options: ", ["1", "2", "3", "4", "5"])
+        user_input = validate_user_input("Choose a number from the listed options: ", ["1", "2", "3", "4", "5", "6"])
         print()
             
 
@@ -33,13 +33,17 @@ def main():
             case "5":
                 total_spending_by_category(expenses)
 
+            case "6":
+                print("Exiting...")
+                break
+
         save_expenses(expenses)
         
         try_again = validate_user_input("will you like to perform another transaction? [y/n]: ", ["y", "n"]).lower()
         if try_again == "n":
             break
 
-    print("Remeber to spend wisely!\n See You Again!!!")
+    print("Remeber to spend wisely!\nSee You Again!!!")
 
 
 def load_expenses():
